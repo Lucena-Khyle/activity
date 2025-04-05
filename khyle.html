@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sidebar">
+    <div class="logo">JALIBE</div>
+    <hr>
+    <input type="text" id="searchInput" placeholder="Search for products..." onkeyup="searchProduct()">
+    <select id="type" onchange="filterByType()">
+      <option value="All">All</option>
+      <option value="Food">Food</option>
+      <option value="Meal">Meal</option>
+      <option value="Beverages">Beverages</option>
+      <option value="Dessert">Dessert</option>
+    </select>
+    <button class="filter-btn">Price <span>↑ ↓</span></button>
+    <button class="filter-btn">Quantity <span>↑ ↓</span></button>
+  </div>
+
+  <div class="right-section">
+    <header>
+      <h1>Inventory Management System</h1>
+    </header>
+
+    <table id="inventoryTable">
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Details</th>
+          <th>Quantity</th>
+          <th>Price (₱)</th>
+          <th>Date Added</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="product-item" data-type="Food">
+          <td><input type="checkbox" class="product-checkbox" onchange="updateDateAdded(this)"></td>
+          <td><img src="image/Chicken.png" alt="Chicken" width="50" height="50"></td>
+          <td>Chicken</td>
+          <td>Fried chicken</td>
+          <td><input type="number" class="product-quantity" min="1" value="1"></td>
+          <td>₱100</td>
+          <td class="date-added"></td>
+          <td>
+            <button class="edit-btn" onclick="editItem(this)">Edit</button>
+            <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+          </td>
+        </tr>
+        <tr class="product-item" data-type="Beverages">
+          <td><input type="checkbox" class="product-checkbox" onchange="updateDateAdded(this)"></td>
+          <td><img src="image/Coke.jpg" alt="Coke" width="50" height="50"></td>
+          <td>Coke</td>
+          <td>Drinks</td>
+          <td><input type="number" class="product-quantity" min="1" value="1"></td>
+          <td>₱50</td>
+          <td class="date-added"></td>
+          <td>
+            <button class="edit-btn" onclick="editItem(this)">Edit</button>
+            <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+          </td>
+        </tr>
+        <tr class="product-item" data-type="Dessert">
+          <td><input type="checkbox" class="product-checkbox" onchange="updateDateAdded(this)"></td>
+          <td><img src="image/Sundae.png" alt="Sundae" width="50" height="50"></td>
+          <td>Sundae</td>
+          <td>Cold Dessert</td>
+          <td><input type="number" class="product-quantity" min="1" value="1"></td>
+          <td>₱59</td>
+          <td class="date-added"></td>
+          <td>
+            <button class="edit-btn" onclick="editItem(this)">Edit</button>
+            <button class="remove-btn" onclick="removeItem(this)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="buttons">
+      <button id="addItemBtn" onclick="addItemToOrder()">Add Item</button>
+      
+    <div class="buttons">
+    <a href="index.html">
+      <button onclick="nextPage()">Next</button>
+    </a>
+    </div>
+    </div>
+  </div>
+  
+ 
+ <script src="lucena.js"></script> 
+</head>
+
+</body>
+</html>

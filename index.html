@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Item</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Create New Item</h1>
+  </header>
+
+  <div class="form-container">
+    <form id="createItemForm">
+      <label for="name">Product Name:</label>
+      <select id="name" name="name" required onchange="updateFormFields()">
+        <option value="Chicken">Chicken</option>
+        <option value="Coke">Coke</option>
+        <option value="Sundae">Sundae</option>
+        <option value="Extra Rice">Extra Rice</option>
+        <option value="Spaghetti">Spaghetti</option>
+      </select>
+
+      <label for="details">Details:</label>
+      <textarea id="details" name="details" required></textarea>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" required>
+
+      <label for="price">Price (₱):</label>
+      <input type="number" id="price" name="price" step="0.01" required>
+
+      <label for="date">Date Added:</label>
+      <input type="date" id="date" name="date" required>
+
+      <label for="type">Type:</label>
+      <select id="type" name="type" required>
+        <option value="Meal">Meal</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Drinks">Drinks</option>
+        <option value="Extra">Extra</option>
+      </select>
+
+      <div id="productImageContainer">
+        <img id="productImage" src="" alt="Product Image" width="150" height="150" style="display:none;">
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit">Add Item</button>
+        <a href="khyle.html">
+          <button type="button">Cancel</button>
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <button id="viewSelectedItems" style="display:none;" onclick="viewSelectedItemsDetails()">View Selected Item(s)</button>
+
+  <div id="selectedItemsDetailsContainer" style="display:none;"></div>
+
+  <script src="lucena.js"></script>
+  
+</body>
+</html>
